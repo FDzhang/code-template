@@ -104,7 +104,7 @@ public class ${Table}ServiceImpl implements ${Table}Service {
      */
     @Override
     public void update(${Table} ${table}){
-        ${table}Mapper.updateByPrimaryKey(${table});
+        ${table}Mapper.updateByPrimaryKeySelective(${table});
     }
 
     /**

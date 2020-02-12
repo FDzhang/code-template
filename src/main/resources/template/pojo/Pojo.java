@@ -30,7 +30,10 @@ public class ${Table} implements Serializable{
 	</#if>
 	</#if>
     @Column(name = "${model.column}")
-	private ${model.simpleType} ${model.name};//${model.desc!""}
+	/**
+	 * ${model.desc!""}
+	 */
+	private ${model.simpleType} ${model.name};
 
 </#list>
 
