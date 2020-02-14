@@ -112,7 +112,7 @@ public class ${Table}ServiceImpl implements ${Table}Service {
      */
     @Override
     public void add(${Table} ${table}){
-        ${table}Mapper.insert(${table});
+        ${table}Mapper.insertSelective(${table});
     }
 
     /**
