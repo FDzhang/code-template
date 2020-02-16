@@ -19,6 +19,9 @@ import ${set};
 public class ${Table} implements Serializable{
 
 <#list models as model>
+	/**
+	 * ${model.desc!""}
+	 */
 	<#if swagger==true>
 	@ApiModelProperty(value = "${model.desc!""}",required = false)
 	</#if>
@@ -29,9 +32,6 @@ public class ${Table} implements Serializable{
 	</#if>
 	</#if>
     @Column(name = "${model.column}")
-	/*
-	 * ${model.desc!""}
-	 */
 	private ${model.simpleType} ${model.name};
 
 </#list>
