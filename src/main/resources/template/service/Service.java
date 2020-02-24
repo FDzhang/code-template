@@ -33,6 +33,12 @@ public interface ${Table}Service {
     List<${Table}> findList(${Table} ${table});
 
     /***
+     * 新增${Table}
+     * @param ${table}
+     */
+    void add(${Table} ${table});
+
+    /***
      * 删除${Table}
      * @param id
      */
@@ -43,12 +49,6 @@ public interface ${Table}Service {
      * @param ${table}
      */
     void update(${Table} ${table});
-
-    /***
-     * 新增${Table}
-     * @param ${table}
-     */
-    void add(${Table} ${table});
 
     /**
      * 根据ID查询${Table}

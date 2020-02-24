@@ -64,7 +64,6 @@ public class ${Table}ServiceImpl implements ${Table}Service {
         return ${table}Mapper.selectByExample(example);
     }
 
-
     /**
      * ${Table}构建查询对象
      * @param ${table}
@@ -89,6 +88,15 @@ public class ${Table}ServiceImpl implements ${Table}Service {
     }
 
     /**
+     * 增加${Table}
+     * @param ${table}
+     */
+    @Override
+    public void add(${Table} ${table}){
+        ${table}Mapper.insertSelective(${table});
+    }
+
+    /**
      * 删除
      * @param id
      */
@@ -104,15 +112,6 @@ public class ${Table}ServiceImpl implements ${Table}Service {
     @Override
     public void update(${Table} ${table}){
         ${table}Mapper.updateByPrimaryKeySelective(${table});
-    }
-
-    /**
-     * 增加${Table}
-     * @param ${table}
-     */
-    @Override
-    public void add(${Table} ${table}){
-        ${table}Mapper.insertSelective(${table});
     }
 
     /**

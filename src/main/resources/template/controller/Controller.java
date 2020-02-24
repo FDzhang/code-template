@@ -79,41 +79,6 @@ public class ${Table}Controller {
     }
 
     /***
-     * 根据ID删除${Table}数据
-     * @param id
-     * @return
-     */
-    <#if swagger==true>
-    @ApiOperation(value = "${Table}根据ID删除",notes = "根据ID删除${Table}方法详情",tags = {"${Table}Controller"})
-    @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "${keyType}")
-    </#if>
-    @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable ${keyType} id){
-        //调用${Table}Service实现根据主键删除
-        ${table}Service.delete(id);
-        return new Result(true,StatusCode.OK,"删除成功");
-    }
-
-    /***
-     * 修改${Table}数据
-     * @param ${table}
-     * @param id
-     * @return
-     */
-    <#if swagger==true>
-    @ApiOperation(value = "${Table}根据ID修改",notes = "根据ID修改${Table}方法详情",tags = {"${Table}Controller"})
-    @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "${keyType}")
-    </#if>
-    @PutMapping(value="/{id}")
-    public Result update(@RequestBody <#if swagger==true>@ApiParam(name = "${Table}对象",value = "传入JSON数据",required = false)</#if> ${Table} ${table},@PathVariable ${keyType} id){
-        //设置主键值
-        ${table}.${keySetMethod}(id);
-        //调用${Table}Service实现修改${Table}
-        ${table}Service.update(${table});
-        return new Result(true,StatusCode.OK,"修改成功");
-    }
-
-    /***
      * 新增${Table}数据
      * @param ${table}
      * @return
@@ -126,6 +91,41 @@ public class ${Table}Controller {
         //调用${Table}Service实现添加${Table}
         ${table}Service.add(${table});
         return new Result(true,StatusCode.OK,"添加成功");
+    }
+
+    /***
+     * 根据ID删除${Table}数据
+     * @param id
+     * @return
+     */
+    <#if swagger==true>
+    @ApiOperation(value = "${Table}根据ID删除", notes = "根据ID删除${Table}方法详情", tags = {"${Table}Controller"})
+    @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "${keyType}")
+    </#if>
+    @DeleteMapping(value = "/{id}")
+    public Result delete(@PathVariable ${keyType}id){
+        //调用${Table}Service实现根据主键删除
+        ${table}Service.delete(id);
+        return new Result(true,StatusCode.OK,"删除成功");
+    }
+
+    /***
+     * 修改${Table}数据
+     * @param ${table}
+     * @param id
+     * @return
+     */
+    <#if swagger==true>
+    @ApiOperation(value = "${Table}根据ID修改", notes = "根据ID修改${Table}方法详情", tags = {"${Table}Controller"})
+    @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "${keyType}")
+    </#if>
+    @PutMapping(value = "/{id}")
+    public Result update(@RequestBody<#if swagger==true>@ApiParam(name = "${Table}对象", value = "传入JSON数据", required = false)</#if>${Table}${table},@PathVariable ${keyType}id){
+        //设置主键值
+        ${table}.${keySetMethod}(id);
+        //调用${Table}Service实现修改${Table}
+        ${table}Service.update(${table});
+        return new Result(true,StatusCode.OK,"修改成功");
     }
 
     /***

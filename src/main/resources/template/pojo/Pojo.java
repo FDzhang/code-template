@@ -42,11 +42,10 @@ public class ${Table} implements Serializable{
 	public ${model.simpleType} get${model.upperName}() {
 		return ${model.name};
 	}
-
-
 	public void set${model.upperName}(${model.simpleType} ${model.name}) {
 		this.${model.name} = ${model.name};
 	}
+
 </#list>
 
 
