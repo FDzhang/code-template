@@ -16,6 +16,7 @@ import ${set};
 @ApiModel(description = "${Table}",value = "${Table}")
 </#if>
 @Table(name="${TableName}")
+@Data
 public class ${Table} implements Serializable{
 
 <#list models as model>
